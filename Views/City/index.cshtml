@@ -1,0 +1,47 @@
+﻿@using MVCExample.Helper
+
+
+@{
+    string[] cities = new string[] {"London", "Paris", "New-York"}; 
+}
+
+<html>
+    <body>
+        <h3>Cities</h3>
+        @Html.CreateList(cities);
+       
+    </body>
+</html>
+
+
+ @ListHelper.CreateListTagHelper(Html, cities)
+
+ <form method="post" action="~/City/Create">
+     <p>
+         <label>Name</label><br />
+         <input type="text" name="name" />
+     </p>
+       <p>
+         <label>Population</label><br />
+         <input type="number" name="population" />
+     </p>
+     <input type="submit" value="Send"/>
+ </form>
+
+ @using(Html.BeginForm("Create", "City", FormMethod.Post)){
+     <p>
+         @Html.Label("Name");
+         @Html.TextBox("name", "", new {type="text"})
+     </p>
+       <p>
+         @Html.Label("Population");
+         @Html.TextBox("population", "", new {type="number"})
+     </p>
+      <p>
+         @Html.Label("Area");
+         @Html.TextBox("area", "", new {type="number"})
+     </p>
+     <input type="submit" value="Send"/>
+ }
+
+ @Html.DropDownList("user", new SelectList(new string[] {"user1", "user222"}), "Select user")

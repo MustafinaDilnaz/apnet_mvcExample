@@ -1,0 +1,34 @@
+﻿
+@using MVCExample.Helper
+
+@model IEnumerable<Product>
+@{
+
+}
+ 
+<html>
+    <body>
+        <h3>Products</h3>
+        @foreach(var prod in Model){
+            @await Html.PartialAsync("_indexProduct", prod); 
+        }       
+        @*<table>
+            <tr>
+                <td>Name</td>
+                <td>Price</td>
+                <td>CategoryName</td>
+                <td></td>
+            </tr>
+                @foreach (var product in Model)
+                {
+                    <tr>
+                        <td>@product.Name</td>
+                        <td>@product.Price</td>
+                        <td>@product.category.Name</td>
+                    </tr>
+                }
+        </table>*@
+
+        @Html.CreateListProductTagHelper(Model.ToList());
+    </body>
+</html>

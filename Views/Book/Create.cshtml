@@ -1,0 +1,28 @@
+﻿
+<html>
+    <body>
+        <div>
+            <h3>Добавление книги</h3>
+            <form method="post">
+                
+                <table>
+@*                    <input type="hidden" value="@ViewBag.BookId" name="BookId" />
+*@
+                    <tr>
+                        <td>Name</td>
+                        <td><input type="text" name="Name" /></td>
+                    </tr>
+                    <tr>
+                        <td>Price</td>
+                        <td><input type="text" name="Price" /></td>
+                    </tr> 
+                    <tr>
+                        <td>
+                            <input type="submit" value="Отправить"/>
+                        </td>
+                    </tr>
+                </table>
+            </form>
+        </div>
+    </body>
+</html>
